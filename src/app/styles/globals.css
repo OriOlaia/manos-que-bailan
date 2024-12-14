@@ -1,0 +1,103 @@
+/*HEADER*/
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background-color: #5f2af1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    
+  }
+  
+  .logo {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+  .navbar a {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+  
+  .navbar a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover::before {
+    width: 100%;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /*CUERPO*/
+
+  main{
+    margin: 100px;
+    padding: 25px;
+  }
+
+/*FOOTER*/
+
+  .foo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 5vh;
+  }
+  footer {
+    position: absolute;
+    width: 100%;
+    background-color: #5f2af1;
+    padding: 20px 50px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  footer .social_icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+  }
+  
+  footer .social_icon li{
+    list-style: none;
+  }
+  
+  footer .social_icon li a {
+    font-size: 2rem;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  
+  footer .social_icon li a:hover {
+    transform: translateY(-10px);
+  }
+
+  footer p {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
