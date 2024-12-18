@@ -30,8 +30,9 @@ function LoginPage() {
 
   })
 
-  return (
-    <div className="container">
+return (
+  <div className="container d-flex justify-content-center align-items-center" style={{marginTop:'50px', marginBottom:'200px' }}>
+    <div className="text-center" style={{ width: '400px' }}>
       <h1>INICIO DE SESION</h1>
       <form onSubmit={onSubmit} className="row">
 
@@ -39,41 +40,53 @@ function LoginPage() {
           <p className='text-danger'>{error}</p>
         )}
 
-          <div className="row">
-            <div className="col-4 form-floating">
-              <input type="email"
+        <div className="row">
+          <div className="col-12 form-floating mb-3">
+            <input 
+              type="email"
               {...register("email", {
                 required: {
-                  value:true,
+                  value: true,
                   message: "Correo requerido",
                 },
               })}
-              className="form-control" id="floatingEmail" placeholder="prueba@prueba.com"/>
-              <label className="form-label" htmlfor="FloatingEmail">Correo</label>
-              {errors.email && (
-                  <span className="text-danger">{errors.email.message}</span>
-                )}
-            </div>
+              className="form-control"
+              id="floatingEmail"
+              placeholder="prueba@prueba.com"
+            />
+            <label className="form-label" htmlFor="floatingEmail">Correo</label>
+            {errors.email && (
+              <span className="text-danger">{errors.email.message}</span>
+            )}
           </div>
-          <div className="row">
-            <div className="col-4 form-floating mb-3">
-              <input type="password" 
+        </div>
+
+        <div className="row">
+          <div className="col-12 form-floating mb-3">
+            <input 
+              type="password" 
               {...register("password", {
                 required: {
-                  value:true,
+                  value: true,
                   message: "Contraseña requerida",
                 },
               })}
-              className="form-control" id="floatingPassword" placeholder="******"/>
-              <label className="form-label" htmlfor="floatingPassword">Contraseña</label>
-              {errors.password && (
-                  <span className="text-danger">{errors.password.message}</span>
-                )}
-            </div>
+              className="form-control"
+              id="floatingPassword"
+              placeholder="******"
+            />
+            <label className="form-label" htmlFor="floatingPassword">Contraseña</label>
+            {errors.password && (
+              <span className="text-danger">{errors.password.message}</span>
+            )}
           </div>
-          <button type="submit" className="col-2 btn btn-primary">Iniciar Sesion</button>
-        </form>
+        </div>
+
+        <button type="submit" className="col-12 btn btn-primary">Iniciar Sesion</button>
+      </form>
     </div>
-  )
+  </div>
+)
 }
+
 export default LoginPage

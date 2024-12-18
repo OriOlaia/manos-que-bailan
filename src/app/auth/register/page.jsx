@@ -39,81 +39,99 @@ export default function RegisterPage (){
   console.log(errors)
 
   return (
-      <div className="container">
-        <form action="" onSubmit={onSubmit} className="row">
+
+    <div className="container d-flex justify-content-center align-items-center" style={{marginTop:'50px', marginBottom:'200px' }}>
+      <div className="text-center" style={{ width: '400px' }}>
+        <h1>REGISTRO</h1>
+        <form onSubmit={onSubmit} className="row">
           <div className="row">
-            <div className="col-4 form-floating">
-              <input type="text" className="form-control" id="floatingInput" placeholder="Ori"
-                {... register("username", {
+            <div className="col-12 form-floating mb-3">
+              <input 
+                type="text" 
+                className="form-control" 
+                id="floatingInput" 
+                placeholder="Ori"
+                {...register("username", {
                   required: {
-                    value:true,
+                    value: true,
                     message: "Usuario requerido",
                   }
                 })}
               />
-              <label className="form-label" htmlfor="FloatingInput">Usuario</label>
-              
+              <label className="form-label" htmlFor="floatingInput">Usuario</label>
               {errors.username && (
-                  <span className="text-danger">{errors.username.message}</span>
-                )}
-    
+                <span className="text-danger">{errors.username.message}</span>
+              )}
             </div>
           </div>
+  
           <div className="row">
-            <div className="col-4 form-floating">
-              <input type="email" className="form-control" id="floatingEmail" placeholder="prueba@prueba.com"
-              {... register("email", {
-                required: {
-                  value:true,
-                  message: "Correo requerido",
-                }
-              })}
-              />
-              <label className="form-label" htmlfor="FloatingEmail">Email</label>
-              {errors.email && (
-                  <span className="text-danger">{errors.email.message}</span>
-                )}
-
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-4 form-floating mb-3">
-              <input type="password" className="form-control" id="floatingPassword" placeholder="123456"
-                {... register("password", {
-                required: {
-                  value:true,
-                  message: "Contraseña requerida",
-                }
-              })}
-              />
-              <label className="form-label" htmlfor="floatingPassword">Contraseña</label>
-              {errors.password && (
-                  <span className="text-danger">{errors.password.message}</span>
-                )}
-
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-4 form-floating mb-3">
-              <input type="confirmPassword" className="form-control" id="floatingConfirmPassword" placeholder="123456"
-                {... register("confirmPassword", {
+            <div className="col-12 form-floating mb-3">
+              <input 
+                type="email" 
+                className="form-control" 
+                id="floatingEmail" 
+                placeholder="prueba@prueba.com"
+                {...register("email", {
                   required: {
-                    value:true,
+                    value: true,
+                    message: "Correo requerido",
+                  }
+                })}
+              />
+              <label className="form-label" htmlFor="floatingEmail">Email</label>
+              {errors.email && (
+                <span className="text-danger">{errors.email.message}</span>
+              )}
+            </div>
+          </div>
+  
+          <div className="row">
+            <div className="col-12 form-floating mb-3">
+              <input 
+                type="password" 
+                className="form-control" 
+                id="floatingPassword" 
+                placeholder="123456"
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Contraseña requerida",
+                  }
+                })}
+              />
+              <label className="form-label" htmlFor="floatingPassword">Contraseña</label>
+              {errors.password && (
+                <span className="text-danger">{errors.password.message}</span>
+              )}
+            </div>
+          </div>
+  
+          <div className="row">
+            <div className="col-12 form-floating mb-3">
+              <input 
+                type="password" 
+                className="form-control" 
+                id="floatingConfirmPassword" 
+                placeholder="123456"
+                {...register("confirmPassword", {
+                  required: {
+                    value: true,
                     message: "Confirmación de contraseña requerida",
                   }
                 })}
               />
-              <label className="form-label" htmlfor="floatingConfirmPassword" >Confirmar contraseña</label>
+              <label className="form-label" htmlFor="floatingConfirmPassword">Confirmar contraseña</label>
               {errors.confirmPassword && (
-                  <span className="text-danger">{errors.confirmPassword.message}</span>
-                )}
-
+                <span className="text-danger">{errors.confirmPassword.message}</span>
+              )}
             </div>
-
           </div>
-          <button type="submit" className="col-2 btn btn-primary">Register</button>
+  
+          <button type="submit" className="col-12 btn btn-primary">Registrar</button>
         </form>
       </div>
+    </div>
   )
   
 

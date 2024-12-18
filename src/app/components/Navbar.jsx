@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {getServerSession} from 'next-auth/next'
 import {authOptions} from '../../app/api/auth/[...nextauth]/route'
+import Image from "next/image";
 
 async function Navbar() {
 
@@ -10,9 +11,16 @@ async function Navbar() {
   return (
     <div>
         <header className="header container-fluid">
-          <a href="\" className="logo text-white">
-            MB
-          </a>
+          <div className="image">
+            <Image
+                        src="/assets/logo.png"
+                        alt="Seña"
+                        width={75}
+                        height={75}
+                        className="card-img-top"
+                        />
+          </div>
+          
           <nav className='navbar'>
             {
                 !session?.user ? (
@@ -20,7 +28,7 @@ async function Navbar() {
                         <Link href="/" className="text-white">Inicio</Link>
                         <Link href="/about " className="text-white">Acerca de mí</Link>
                         <Link href="/documentation" className="text-white">Documentación</Link>
-                        <Link href="/course" className="text-white">Curso</Link>
+                        <Link href="/dashboard" className="text-white">Curso</Link>
                         <Link href="/contact" className="text-white">Contacto</Link>
                         <Link href="/auth/login" className="text-white">Iniciar Sesion</Link>
                         <Link href="/auth/register" className="text-white">Registrar</Link>
